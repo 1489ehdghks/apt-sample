@@ -1,0 +1,110 @@
+.second-content {
+    height: 100vh;
+    position: relative;
+    background: rgba(20, 30, 60, 0.95);
+    overflow: hidden;
+  
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('../../../shared/asset/main_banner_test.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+    }
+  
+    .content {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 120px;
+      max-width: 1920px;
+      margin: 0 auto;
+  
+      .text-content {
+        max-width: 700px;
+        color: white;
+      }
+  
+      .main-title {
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 60px;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.95);
+      }
+  
+      .service-items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+  
+        .service-item {
+          display: flex;
+          gap: 24px;
+          align-items: flex-start;
+  
+          .number {
+            font-size: 72px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.15);
+            line-height: 1;
+          }
+  
+          .text {
+            h3 {
+              font-size: 24px;
+              font-weight: 600;
+              margin-bottom: 16px;
+              color: rgba(255, 255, 255, 0.9);
+            }
+  
+            p {
+              font-size: 16px;
+              line-height: 1.8;
+              color: rgba(255, 255, 255, 0.7);
+              margin-bottom: 8px;
+  
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .content {
+        padding: 0 20px;
+  
+        .main-title {
+          font-size: 48px;
+          margin-bottom: 40px;
+        }
+  
+        .service-items {
+          .service-item {
+            .number {
+              font-size: 56px;
+            }
+  
+            .text {
+              h3 {
+                font-size: 20px;
+              }
+  
+              p {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,86 @@
+.first-content {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('../../../shared/asset/banner.jpg');
+      background-size: cover;
+      background-position: center;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.75) 0%,
+          rgba(0, 0, 0, 0.6) 30%,
+          rgba(0, 0, 0, 0.2) 60%,
+          rgba(0, 0, 0, 0.1) 90%
+        );
+      }
+    }
+  
+    .content {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      max-width: 1920px;
+      margin: 0 auto;
+      
+      @media (max-width: 768px) {
+        padding: 0 20px;
+      }
+  
+      .text-content {
+        color: white;
+        max-width: 600px;
+
+      }
+  
+      .subtitle {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 60px;
+        letter-spacing: 1px;
+      }
+  
+      .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        
+        @media (max-width: 768px) {
+          font-size: 36px;
+        }
+      }
+  
+      .description {
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 300;
+        
+        
+        p {
+          margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
