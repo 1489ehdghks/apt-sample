@@ -1,0 +1,94 @@
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 60px 0 40px;
+    position: relative;
+    z-index: 10;
+  
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+  
+      .footer-main {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+  
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 30px;
+        }
+  
+        .company-info {
+          h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+          }
+  
+          p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+          }
+        }
+  
+        .contact-info {
+          .info-item {
+            margin-bottom: 20px;
+  
+            h3 {
+              font-size: 16px;
+              font-weight: 500;
+              margin-bottom: 8px;
+              color: rgba(255, 255, 255, 0.8);
+            }
+  
+            p {
+              font-size: 15px;
+              color: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+      }
+  
+      .footer-bottom {
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+  
+        .copyright {
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+  
+        .legal-links {
+          a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: rgba(255, 255, 255, 0.9);
+            }
+          }
+  
+          .divider {
+            margin: 0 12px;
+            color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+    }
+  }

@@ -1,28 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './FirstSection.scss';
+import { MapPin, Phone, Train, Bus } from 'lucide-react';
+import locationImage from '../../../shared/asset/location.jpg';
+import './ThirdSection.scss';
 
 const ThirdSection = () => {
+  const handleNaverMapClick = () => {
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = 'nmap://search?query=천안역';
+    } else {
+      window.open('https://map.naver.com/v5/search/천안역', '_blank');
+    }
+  };
+
   return (
-    <section className="first-section">
-      <div className="bg-overlay"></div>
-      <div className="content">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-content"
+    <div className="third-content">
+      <motion.div 
+        className="location-header"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Location</h2>
+        <p>천안역 태양아너스 로써웰의 프리미엄 입지</p>
+      </motion.div>
+
+      <div className="location-container">
+        <motion.div 
+          className="info-section"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="subtitle">천안의 자부심</h2>
-          <h1 className="title">그 이상의<br />랜드마크가 되다!</h1>
-          <div className="description">
-            <p>천안역의 미래 비전과 인프라를 품은 전역 영상센터</p>
-            <p>보다 편하고 보다 이롭고 보다 튼튼한 주거공간을 만들기 위해</p>
-            <p>임주민의 마음으로 명품발을 지세했습니다.</p>
+          <div className="info-item">
+            <MapPin className="icon" />
+            <div>
+              <h3>Address</h3>
+              <p>충청남도 천안시 동남구</p>
+            </div>
           </div>
+
+          <div className="info-item">
+            <Phone className="icon" />
+            <div>
+              <h3>Contact</h3>
+              <p>1555-1960</p>
+            </div>
+          </div>
+
+          <div className="info-item">
+            <Train className="icon" />
+            <div>
+              <h3>Metro</h3>
+              <p>1호선 천안역 도보 3분</p>
+            </div>
+          </div>
+
+          <div className="info-item">
+            <Bus className="icon" />
+            <div>
+              <h3>Bus</h3>
+              <p>11-1, 30, 50번</p>
+            </div>
+          </div>
+
+          <button 
+            className="map-button"
+            onClick={handleNaverMapClick}
+          >
+            네이버 지도에서 보기
+          </button>
+        </motion.div>
+
+        <motion.div 
+          className="map-section"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <img src={locationImage} alt="위치 안내" />
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

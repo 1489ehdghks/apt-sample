@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Layout } from '../widgets/Layout/Layout';
+import { Header } from '../widgets/Header/Header';
 import { Spin } from 'antd';
 import { useScrollToTop } from '../shared/hooks/useScrollToTop'
 
-// 페이지 컴포넌트들을 lazy loading으로 import
 const HomePage = React.lazy(() => import('pages/homePage/HomePage'));
 const AboutPage = React.lazy(() => import('pages/about/AboutPage'));
 const ContactPage = React.lazy(() => import('pages/contact/ContactPage'));
@@ -13,7 +12,7 @@ const App = () => {
   useScrollToTop();
   return (
     <>
-   <Layout>
+<Header/>
       <Suspense
         fallback={
           <div className="flex items-center justify-center h-screen">
@@ -35,7 +34,7 @@ const App = () => {
           />
         </Routes>
       </Suspense>
-    </Layout>
+
     </>
   );
 };

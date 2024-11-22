@@ -4,6 +4,7 @@ import { useGlobalStore } from '../../shared/store/index';
 import FirstSection from './sections/FirstSection';
 import SecondSection from './sections/SecondSection';
 import ThirdSection from './sections/ThirdSection';
+import Footer from '../../widgets/Footer/Footer';
 import './HomePage.scss';
 
 const HomePage = () => {
@@ -13,11 +14,11 @@ const HomePage = () => {
       scrollingSpeed={1000}
       navigation={true}
       navigationPosition="right"
-      navigationTooltips={['HOME', 'HIGH-END LIFE']} // 툴팁 텍스트
+      // navigationTooltips={['HOME', 'HIGH-END LIFE']} //
       showActiveTooltip={true}
       css3={true}
       scrollOverflow={true}
-      normalScrollElements=".popup, .modal" // 모달 내부 스크롤 허용
+      normalScrollElements=".popup, .modal"
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
@@ -27,6 +28,12 @@ const HomePage = () => {
             <div className="section">
               <SecondSection />
             </div>
+            <div className="section">
+              <ThirdSection />
+            </div>
+            <div className="section fp-auto-height">
+            <Footer />
+          </div>
           </ReactFullpage.Wrapper>
         );
       }}
