@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Header.scss';
+import { Link } from 'react-router-dom';
+import './LecielHeader.scss';
 
-export const Header = () => {
+const LecielHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -61,3 +61,6 @@ export const Header = () => {
     </header>
   );
 };
+
+
+export default LecielHeader;

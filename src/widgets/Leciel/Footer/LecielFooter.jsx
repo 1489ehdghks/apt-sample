@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Footer.scss';
+import './LecielFooter.scss';
 
-const Footer = () => {
+const LecielFooter = () => {
   return (
     <motion.footer 
       className="footer"
@@ -46,4 +46,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default LecielFooter;
