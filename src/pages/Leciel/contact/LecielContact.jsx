@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactPage = () => {
+const LecielContact = () => {
   return (
     <div className="min-h-screen pt-16">
       <h1>연락처 페이지</h1>
@@ -8,4 +8,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default LecielContact;
