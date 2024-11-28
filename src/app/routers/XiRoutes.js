@@ -1,14 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LecielHome from '../../pages/Leciel/home/LecielHome';
-import LecielHeader from '../../widgets/Leciel/Header/LecielHeader';
+import XiHome from '../../pages/Xi/XiHome';
+import XiHeader from '../../widgets/Xi/Header/XiHeader';
 
-const LecielRoutes = () => {
+
+const XiRoutes = () => {
   return (
     <div>
-      <LecielHeader/>
+      <XiHeader/>
       <Routes>
-        <Route path="/" element={<LecielHome />} />
+        <Route path="/" element={<XiHome />} />
         {/*
         <Route path="about" element={<LecielAbout />} />
         <Route path="location" element={<LecielLocation />} />
@@ -20,4 +21,4 @@ const LecielRoutes = () => {
   );
 };
 
-export default LecielRoutes;
+export default XiRoutes;

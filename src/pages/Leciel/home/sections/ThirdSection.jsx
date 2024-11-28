@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Train, Bus } from 'lucide-react';
-import locationImage from '../../../../shared/asset/location.jpg';
+import locationImage from '../../../../shared/asset/Leciel/location.jpg';
 import './ThirdSection.scss';
 
 const ThirdSection = () => {
