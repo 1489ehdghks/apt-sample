@@ -1,0 +1,53 @@
+.admin-dashboard {
+    min-height: 100vh;
+  
+    .logo {
+      height: 64px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  
+    .dashboard-header {
+      background: white;
+      padding: 0 24px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+  
+      h2 {
+        margin: 0;
+        color: #1890ff;
+      }
+    }
+  
+    .dashboard-content {
+      padding: 24px;
+      background: #f0f2f5;
+  
+      .project-card {
+        height: 100%;
+        
+        .project-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+  
+        .ant-card-body {
+          p {
+            margin-bottom: 8px;
+  
+            &.last-updated {
+              color: #8c8c8c;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }

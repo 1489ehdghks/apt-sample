@@ -1,12 +1,12 @@
 // Fullpage.js 네비게이션 스타일 커스터마이징
 #fp-nav {
-    // 네비게이션 컨테이너 스타일링
+
     &.right {
-      right: 40px; // 우측 여백 조정
+      right: 40px;
     }
   
     ul li {
-      margin: 8px 0; // 도트 간격 조정
+      margin: 8px 0;
       width: 10px;
       height: 10px;
   
@@ -32,7 +32,11 @@
       }
     }
   }
-  
+  // 애니메이션 부드럽게 처리
+    .fp-table {
+      transition: all 0.8s ease-in-out;
+    }
+    
   /* 스크롤바 숨기기 */
   html {
     scrollbar-width: none; /* Firefox */
@@ -47,14 +51,9 @@
     overflow: hidden;
   }
   
-  /* 섹션 스타일 */
   .section {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
   }
   
-  // 애니메이션 부드럽게 처리
-  .fp-table {
-    transition: all 0.8s ease-in-out;
-  }

@@ -14,7 +14,7 @@ const FirstSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.8,
-              delay: 0.6 // 0.5초 후 시작
+              delay: 0.6
             }}
           >
             당신이 꿈꾸는 곳
@@ -26,7 +26,7 @@ const FirstSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.8,
-              delay: 1.2 // 1초 후 시작
+              delay: 1.2
             }}
           >
             프리미엄
@@ -37,7 +37,7 @@ const FirstSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.8,
-              delay: 1.8 // 1초 후 시작
+              delay: 1.8
             }}
           >
             라이프스타일을 완성하다.
@@ -50,7 +50,7 @@ const FirstSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               duration: 0.8,
-              delay: 2.4 // 1.5초 후 시작
+              delay: 2.4
             }}
           >
             <p>천안역의 미래 비전과 인프라를 품은 전역 영상센터</p>

@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { useGlobalStore } from '../../shared/store/index';
 import FirstSection from './sections/FirstSection';
 import SecondSection from './sections/SecondSection';
 import ThirdSection from './sections/ThirdSection';
-import './HomePage.scss';
+import LecielFooter from '../../../widgets/Leciel/Footer/LecielFooter';
+import './LecielHome.scss';
 
-const HomePage = () => {
+const LecielHome = () => {
   return (
     <ReactFullpage
-
+      // navigationTooltips={['HOME', 'HIGH-END LIFE']} //
       scrollingSpeed={1000}
       navigation={true}
       navigationPosition="right"
-      navigationTooltips={['HOME', 'HIGH-END LIFE']} // 툴팁 텍스트
       showActiveTooltip={true}
       css3={true}
       scrollOverflow={true}
-      normalScrollElements=".popup, .modal" // 모달 내부 스크롤 허용
+      normalScrollElements=".popup, .modal"
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
@@ -27,6 +26,12 @@ const HomePage = () => {
             <div className="section">
               <SecondSection />
             </div>
+            <div className="section">
+              <ThirdSection />
+            </div>
+            <div className="section fp-auto-height">
+            <LecielFooter />
+          </div>
           </ReactFullpage.Wrapper>
         );
       }}
@@ -34,4 +39,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LecielHome;
