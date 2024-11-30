@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from '../widgets/Layout/Layout';
 import { Spin } from 'antd';
 import { useScrollToTop } from '../shared/hooks/useScrollToTop'
+import ReservationPage from '../pages/reservation/ReservationPage';
 
 // 페이지 컴포넌트들을 lazy loading으로 import
 const HomePage = React.lazy(() => import('pages/homePage/HomePage'));
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/reservation" element={<ReservationPage />} />
           <Route
             path="*"
             element={
