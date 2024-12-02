@@ -5,16 +5,13 @@ const ReservationPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    gender: "",  // Gender field
+    gender: "",
     agree: false,
     receiveInfo: false,
   });
 
-  // Format phone number to 010-0000-0000 pattern
   const formatPhoneNumber = (phone) => {
-    // Remove non-numeric characters
     const cleaned = phone.replace(/\D/g, "");
-    // Apply format if the number is valid
     if (cleaned.length <= 3) {
       return cleaned;
     } else if (cleaned.length <= 7) {
@@ -27,7 +24,6 @@ const ReservationPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // If phone field, format the phone number while typing
     if (name === "phone") {
       setFormData({
         ...formData,
@@ -50,9 +46,8 @@ const ReservationPage = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent form submission and page reload
+    e.preventDefault();
     console.log(formData); // Log the form data
-    // You can proceed with API call or other actions here
   };
 
   return (
