@@ -53,7 +53,7 @@ const LecielHeader = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <Link to="/" className="logo">
+        <Link to="/leciel" className="logo">
           태양아너스 르씨엘
         </Link>
 

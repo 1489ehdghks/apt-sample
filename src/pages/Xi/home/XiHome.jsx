@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import XiFooter from '../../widgets/Xi/Footer/XiFooter';
-import image1 from '../../shared/asset/Xi/1.jpg';
-import image2 from '../../shared/asset/Xi/2.jpg';
-import image3 from '../../shared/asset/Xi/3.jpg';
-import image4 from '../../shared/asset/Xi/4.jpg';
-import image5 from '../../shared/asset/Xi/5.jpg';
+import image1 from '../../../shared/asset/Xi/1.jpg';
+import image2 from '../../../shared/asset/Xi/2.jpg';
+import image3 from '../../../shared/asset/Xi/3.jpg';
+import image4 from '../../../shared/asset/Xi/4.jpg';
+import image5 from '../../../shared/asset/Xi/5.jpg';
 import './XiHome.scss';
 
 const XiHome = () => {
@@ -63,10 +62,6 @@ const XiHome = () => {
     })
   };
 
-  const handleFooterExpand = (expanded) => {
-    setIsFooterExpanded(expanded);
-  };
-
   return (
     <div 
       className="xi-home"
@@ -116,7 +111,6 @@ const XiHome = () => {
           </motion.div>
         ))}
       </div>
-      <XiFooter onExpand={handleFooterExpand} />
     </div>
   );
 };

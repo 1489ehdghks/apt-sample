@@ -1,33 +1,33 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./ReservationPage.scss";
 
 const ReservationPage = () => {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phone_number: "",
     gender: "",
+    apartment_id: 1,  // 현재는 고정값 1 사용
     agree: false,
     receiveInfo: false,
   });
 
   const formatPhoneNumber = (phone) => {
-    const cleaned = phone.replace(/\D/g, "");
-    if (cleaned.length <= 3) {
-      return cleaned;
-    } else if (cleaned.length <= 7) {
-      return `${cleaned.slice(0, 3)}-${cleaned.slice(3)}`;
-    } else {
-      return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 7)}-${cleaned.slice(7, 11)}`;
-    }
+    return phone.replace(/\D/g, "");  // 숫자만 남기고 모든 문자 제거
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "phone") {
+    if (name === "phone_number") {
       setFormData({
         ...formData,
         [name]: formatPhoneNumber(value),
+      });
+    } else if (name === "gender") {
+      setFormData({
+        ...formData,
+        [name]: value === "male" ? "MALE" : "FEMALE",  // API 형식에 맞게 변환
       });
     } else {
       setFormData({
@@ -45,9 +45,37 @@ const ReservationPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData); // Log the form data
+    
+    if (!formData.agree || !formData.receiveInfo) {
+      alert("필수 동의사항에 모두 동의해주세요.");
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://13.209.59.247/api/landing/counsel/application', {
+        name: formData.name,
+        phone_number: formData.phone_number,
+        apartment_id: formData.apartment_id,
+        gender: formData.gender
+      });
+
+      if (response.status === 200) {
+        alert("예약이 성공적으로 등록되었습니다.");
+        setFormData({
+          name: "",
+          phone_number: "",
+          gender: "",
+          apartment_id: 1,
+          agree: false,
+          receiveInfo: false,
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert("예약 등록에 실패했습니다. 다시 시도해주세요.");
+    }
   };
 
   return (
@@ -70,14 +98,14 @@ const ReservationPage = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="phone">휴대전화</label>
+          <label htmlFor="phone_number">휴대전화</label>
           <input
             type="text"
-            id="phone"
-            name="phone"
-            value={formData.phone}
+            id="phone_number"
+            name="phone_number"
+            value={formData.phone_number}
             onChange={handleChange}
-            maxLength="13" // Prevents exceeding phone number length
+            maxLength="11"
             required
           />
         </div>
@@ -90,7 +118,7 @@ const ReservationPage = () => {
                 type="radio"
                 name="gender"
                 value="male"
-                checked={formData.gender === "male"}
+                checked={formData.gender === "MALE"}
                 onChange={handleChange}
                 required
               />
@@ -101,7 +129,7 @@ const ReservationPage = () => {
                 type="radio"
                 name="gender"
                 value="female"
-                checked={formData.gender === "female"}
+                checked={formData.gender === "FEMALE"}
                 onChange={handleChange}
                 required
               />

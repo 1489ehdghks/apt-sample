@@ -1,7 +1,13 @@
 .xi-footer {
-    background-color: #333;
-    color: #999;
-    font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background-color: #333;
+  color: #999;
+  font-size: 14px;
+
   
     .footer-content {
       max-width: 1400px;

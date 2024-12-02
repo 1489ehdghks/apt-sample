@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LecielHome from '../../pages/Leciel/home/LecielHome';
 import LecielHeader from '../../widgets/Leciel/Header/LecielHeader';
-import ReservationPage from '../../pages/reservation/ReservationPage';
+import ReservationPage from '../../pages/Leciel/reservation/ReservationPage';
+
 
 const LecielRoutes = () => {
   return (

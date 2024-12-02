@@ -1,0 +1,11 @@
+.xi-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+    .xi-content {
+      flex: 1;
+      margin-top: 80px;
+    }
+  }
+  

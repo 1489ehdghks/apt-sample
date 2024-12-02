@@ -30,7 +30,7 @@ const projects = [
     type: 'internal'
   },
   {
-    id: 'Xi',
+    id: 'xi',
     name: '자이',
     status: 'active',
     description: '자이아파트 분양 프로젝트',
@@ -38,7 +38,7 @@ const projects = [
     type: 'internal'
   },
   {
-    id: 'Hillstate',
+    id: 'hillstate',
     name: '힐스테이트',
     status: 'active',
     description: '힐스테이트 분양 프로젝트',

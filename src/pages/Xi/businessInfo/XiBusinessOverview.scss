@@ -1,0 +1,115 @@
+.business-overview {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 120px;
+    min-height: calc(100vh - 80px); // 헤더 높이를 뺀 전체 높이
+    margin-top: 80px; // 헤더 높이만큼 마진 추가
+    
+    // 반응형을 위한 미디어 쿼리 추가
+    @media (max-width: 1200px) {
+      width: 100%;
+      padding: 60px 16px 120px;
+    }
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #333;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: #007aff;
+      }
+    }
+  
+    .main-image-container {
+      margin-bottom: 60px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      
+      .main-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+  
+      .thumbnail-container {
+        padding: 20px;
+        background: #f8f9fa;
+        display: flex;
+        gap: 15px;
+        border-top: 1px solid #eee;
+  
+        .thumbnail {
+          width: 120px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 6px;
+          cursor: pointer;
+          opacity: 0.6;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+  
+          &:hover {
+            opacity: 0.8;
+          }
+  
+          &.active {
+            opacity: 1;
+            border-color: #007aff;
+          }
+        }
+      }
+    }
+  
+    .info-table {
+      width: 100%;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+  
+      th, td {
+        padding: 25px;
+        border-bottom: 1px solid #eee;
+        line-height: 1.6;
+      }
+  
+      th {
+        width: 180px;
+        background-color: #f8f9fa;
+        font-weight: 600;
+        text-align: center;
+        color: #333;
+        position: relative;
+  
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 60%;
+          background-color: #eee;
+        }
+      }
+  
+      td {
+        color: #555;
+        font-size: 15px;
+      }
+  
+      tr:last-child {
+        th, td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
