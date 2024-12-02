@@ -38,7 +38,7 @@ const projects = [
     type: 'internal'
   },
   {
-    id: 'Xi',
+    id: 'Hillstate',
     name: '힐스테이트',
     status: 'active',
     description: '힐스테이트 분양 프로젝트',
@@ -46,7 +46,7 @@ const projects = [
     type: 'internal'
   },
   {
-    id: 'Xi',
+    id: 'lemian',
     name: '레미안',
     status: 'active',
     description: '레미안 분양 프로젝트',
@@ -84,10 +84,12 @@ const AdminPage = () => {
   const navigateToProjectDashboard = (projectId) => {
     const project = projects.find(p => p.id === projectId);
     
-    if (project.type === 'external') {
-      window.open(project.url, '_blank');
-    } else {
-      navigate(`/${projectId}`);
+    if (project) {
+      if (project.type === 'external') {
+        window.open(project.url, '_blank');
+      } else {
+        navigate(`/${projectId}`);
+      }
     }
   };
 
@@ -99,6 +101,38 @@ const AdminPage = () => {
     };
     return statusConfig[status] || { color: 'default', text: '상태없음' };
   };
+
+  const menuItems = [
+    {
+      key: 'dashboard',
+      icon: <HomeOutlined />,
+      label: '대시보드'
+    },
+    {
+      key: 'projects',
+      icon: <ProjectOutlined />,
+      label: '프로젝트',
+      children: projects.map((project, index) => ({
+        key: `menu-item-${project.id}-${index}`,
+        label: project.name,
+        onClick: () => project.type === 'external' 
+          ? window.open(project.url, '_blank')
+          : navigateToProjectDashboard(project.id)
+      }))
+    },
+    {
+      key: 'settings',
+      icon: <SettingOutlined />,
+      label: '설정'
+    },
+    {
+      key: 'logout',
+      icon: <LogoutOutlined />,
+      label: '로그아웃',
+      onClick: handleLogout
+    }
+  ];
+ 
 
   return (
     <Layout className="admin-dashboard">
@@ -131,36 +165,34 @@ const AdminPage = () => {
           <h2>프로젝트 대시보드</h2>
         </Header>
         <Content className="dashboard-content">
-          <Row gutter={[16, 16]}>
-            {projects.map(project => (
-              <Col xs={24} sm={12} key={project.id}>
-                <Card 
-                  className="project-card"
-                  title={
-                    <div className="project-card-header">
-                      <span>{project.name}</span>
-                      <Badge 
-                        {...getStatusBadge(project.status)} 
-                      />
-                    </div>
-                  }
-                  actions={[
-                    <Button 
-                      type="primary" 
-                      onClick={() => navigateToProjectDashboard(project.id)}
-                    >
-                      대시보드로 이동
-                    </Button>
-                  ]}
-                >
-                  <p>{project.description}</p>
-                  <p className="last-updated">
-                    최근 업데이트: {project.lastUpdated}
-                  </p>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+        <Row gutter={[16, 16]}>
+  {projects.map((project, index) => ( 
+    <Col xs={24} sm={12} key={`project-card-${project.id}-${index}`}> 
+      <Card 
+        className="project-card"
+        title={
+          <div className="project-card-header">
+            <span>{project.name}</span>
+            <Badge {...getStatusBadge(project.status)} />
+          </div>
+        }
+        actions={[
+          <Button 
+            type="primary" 
+            onClick={() => navigateToProjectDashboard(project.id)}
+          >
+            {project.type === 'external' ? '페이지로 이동' : '대시보드로 이동'}
+          </Button>
+        ]}
+      >
+        <p>{project.description}</p>
+        <p className="last-updated">
+          최근 업데이트: {project.lastUpdated}
+        </p>
+      </Card>
+    </Col>
+  ))}
+</Row>
         </Content>
       </Layout>
     </Layout>

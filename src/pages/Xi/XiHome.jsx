@@ -12,10 +12,12 @@ const XiHome = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [isPaused, setIsPaused] = useState(false);
   const [isFooterExpanded, setIsFooterExpanded] = useState(false);
+  const [key,setKey] = useState(0);
 
   const images = [image1, image2, image3, image4, image5];
 
   const paginate = (newDirection) => {
+    setKey(prev => prev + 1);
     const newPage = page + newDirection;
     if (newPage < 0) {
       setPage([images.length - 1, newDirection]);
@@ -26,7 +28,13 @@ const XiHome = () => {
     }
   };
 
-  // 자동 슬라이드
+  const handleImageChange = (index) => {
+    setKey(prev => prev + 1);
+    const direction = index > page ? 1 : -1;
+    setPage([index, direction]);
+  };
+
+
   useEffect(() => {
     if (isPaused) return;
 
@@ -37,10 +45,6 @@ const XiHome = () => {
     return () => clearInterval(timer);
   }, [isPaused, page]);
 
-  const handleImageChange = (index) => {
-    const direction = index > page ? 1 : -1;
-    setPage([index, direction]);
-  };
 
   const variants = {
     enter: (direction) => ({
@@ -102,6 +106,7 @@ const XiHome = () => {
             <img src={image} alt={`썸네일 ${index + 1}`} />
             {page === index && (
               <motion.div 
+                key={`progress-${key}`}
                 className="progress-bar"
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
