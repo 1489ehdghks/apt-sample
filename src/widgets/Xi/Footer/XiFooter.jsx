@@ -1,48 +1,67 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 import './XiFooter.scss';
 
 const XiFooter = () => {
-  return (
-    <motion.footer 
-      className="footer"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="footer-content">
-        <div className="footer-main">
-          <div className="company-info">
-            <h2>천안역 태양아너스 로써웰</h2>
-            <p>시행 : 태양개발(주)</p>
-            <p>시공 : 태영건설</p>
-          </div>
-          
-          <div className="contact-info">
-            <div className="info-item">
-              <h3>모델하우스</h3>
-              <p>충청남도 천안시 동남구</p>
-            </div>
-            <div className="info-item">
-              <h3>문의전화</h3>
-              <p>1555-1960</p>
-            </div>
-          </div>
-        </div>
+  const [isExpanded, setIsExpanded] = useState(false);
 
-        <div className="footer-bottom">
-          <p className="copyright">
-            © 2024 APPO. All Rights Reserved.
-          </p>
-          <div className="legal-links">
-            <a href="/privacy">개인정보처리방침</a>
-            <span className="divider">|</span>
-            <a href="/terms">이용약관</a>
-          </div>
+  return (
+    <footer className="xi-footer">
+      {/* 기본 푸터 정보 */}
+      <div className="footer-content">
+        <div className="basic-info">
+          <span>시행 : 뉴타운현성신호파크자구 주택재건축정비사업조합</span>
+          <span className="divider">|</span>
+          <span>시공 : GS건설</span>
         </div>
+        
+        <button 
+          className="expand-button"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? <ChevronDown /> : <ChevronUp />}
+        </button>
       </div>
-    </motion.footer>
+
+      {/* 확장된 상세 정보 */}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div 
+            className="expanded-content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="detailed-info">
+              <div className="info-row">
+                <span>GS건설 : 서울특별시 종로구 종로33 그랑서울</span>
+                <span className="divider">|</span>
+                <span>대표이사 : @@@</span>
+                <span className="divider">|</span>
+                <span>등록번호 : 104-81-18121</span>
+                <span className="divider">|</span>
+                <span>고객센터 : 1577-4254</span>
+              </div>
+              <div className="info-row">
+                <span>오리온대행 : ㈜아이앤에틀러스</span>
+                <span className="divider">|</span>
+                <span>사업자등록번호 : 275-81-00393</span>
+                <span className="divider">|</span>
+                <span>대표 : 정상규</span>
+              </div>
+              <div className="warning-text">
+                ※ 본 사이트의 이미지는 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공 시 다를 수 있습니다.
+              </div>
+              <div className="copyright">
+                Copyright © 2024 APPO ALL RIGHTS RESERVED.
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </footer>
   );
 };
 
