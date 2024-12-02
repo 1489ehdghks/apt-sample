@@ -8,7 +8,7 @@ const XiFooter = () => {
 
   return (
     <footer className="xi-footer">
-      {/* 기본 푸터 정보 */}
+
       <div className="footer-content">
         <div className="basic-info">
           <span>시행 : 뉴타운현성신호파크자구 주택재건축정비사업조합</span>
@@ -24,7 +24,7 @@ const XiFooter = () => {
         </button>
       </div>
 
-      {/* 확장된 상세 정보 */}
+
       <AnimatePresence>
         {isExpanded && (
           <motion.div 
