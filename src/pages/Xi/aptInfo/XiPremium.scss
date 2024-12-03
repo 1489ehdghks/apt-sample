@@ -1,0 +1,117 @@
+@import '../../../shared/styles/variables';
+
+.premium-info {
+  width: 100%;
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: 60px 20px 120px;
+
+  @media (max-width: $mobile) {
+    padding: 30px 15px 60px;
+  }
+
+  .premium-items {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+
+    @media (max-width: $mobile) {
+      gap: 60px;
+    }
+  }
+
+  .premium-item {
+    position: relative;
+
+    .item-number {
+      font-size: 100px;
+      font-weight: 300;
+      color: #f0f0f0;
+      position: absolute;
+      top: -60px;
+      left: 0;
+      z-index: -1;
+
+      @media (max-width: $mobile) {
+        font-size: 60px;
+        top: -40px;
+      }
+    }
+
+    .item-label {
+      font-size: 14px;
+      color: #006cb7;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+
+      @media (max-width: $mobile) {
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .item-content {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      &.reverse {
+        flex-direction: row-reverse;
+
+        @media (max-width: $mobile) {
+          flex-direction: column;
+        }
+      }
+
+      .item-image {
+        flex: 1;
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+        }
+      }
+
+      .item-text {
+        flex: 1;
+
+        h3 {
+          font-size: 32px;
+          font-weight: 500;
+          color: #333;
+          margin-bottom: 20px;
+          line-height: 1.4;
+
+          @media (max-width: $mobile) {
+            font-size: 24px;
+            margin-bottom: 15px;
+          }
+
+          .highlight {
+            color: #006cb7;
+          }
+        }
+
+        p {
+          font-size: 17px;
+          line-height: 1.8;
+          color: #666;
+          
+          @media (max-width: $mobile) {
+            font-size: 15px;
+            line-height: 1.6;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

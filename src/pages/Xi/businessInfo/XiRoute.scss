@@ -1,0 +1,133 @@
+@import '../../../shared/styles/variables';
+
+
+.route-info {
+  width: 100%;
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: 60px 20px 120px;
+
+  @media (max-width: $mobile) {
+    padding: 30px 15px 60px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    color: #333;
+    letter-spacing: -0.5px;
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .locations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @media (max-width: $mobile) {
+      gap: 40px;
+    }
+  }
+
+  .location-card {
+    width: 100%;
+    
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .text-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 30px;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 30px;
+            height: 2px;
+            background-color: $primary-color;
+          }
+        }
+
+        h3 {
+          font-size: 16px;
+          color: #666;
+          font-weight: 500;
+          margin-bottom: -15px;
+        }
+
+        p {
+          font-size: 17px;
+          line-height: 1.6;
+          color: #333;
+          margin-bottom: 30px;
+        }
+
+        .naver-map-btn {
+          align-self: flex-start;
+          padding: 12px 24px;
+          font-size: 15px;
+          color: #fff;
+          background-color: #2C3E50;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: darken(#2C3E50, 10%);
+          }
+        }
+      }
+
+      .map-section {
+        flex: 2;
+        
+        img {
+            width: 100%;
+            height: 448px;
+            aspect-ratio: 498/448;
+            object-fit: contain;
+            border: 1px solid #eee;
+
+          @media (max-width: $mobile) {
+            height: 300px;
+          }
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      .card-content {
+        padding-bottom: 80px;
+        border-bottom: 1px solid #eee;
+
+        @media (max-width: $mobile) {
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+}
