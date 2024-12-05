@@ -1,0 +1,160 @@
+.container {
+  overflow: auto; /* 스크롤을 가능하게 함 */
+  height: 100vh; /* 필요 시, 전체 화면 높이를 명시적으로 설정 */
+  background: linear-gradient(160deg, #1a1a1a 0%, #262626 100%); /* 배경을 그라데이션으로 변경 */
+}
+
+  .banner {
+    .imgBox {
+      position: relative;
+  
+      img {
+        width: 100%;
+      }
+  
+      .textBox1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+  
+        h2 {
+          font-size: 48px;
+          color: white;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+  
+        h4 {
+          font-size: 1.5rem;
+          color: white;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+  
+  .textBox2, .textBox3 {
+    text-align: center;
+    margin-top: 200px;
+  
+    p2 {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    h4 {
+      margin-top: 50px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.7rem;
+      margin-top: 30px;
+      margin-bottom: 100px;
+      color: white;
+    }
+  }
+  
+  .contentBox {
+    margin: 30px 20px;
+  
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .cardBox {
+      display: flex;
+      flex-direction: column; /* 카드를 세로로 나열 */
+      gap: 20px;
+      margin-top: 20px;
+      align-items: center;
+  
+      .card {
+        width: 70%; /* 각 카드의 너비 */
+        padding: 20px;
+        text-align: center;
+  
+        h4 {
+          font-size: 1.2rem;
+          color: white;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #333; /* 선 추가 */
+          padding-bottom: 10px; /* 선과 텍스트 간의 간격을 추가 */
+        }
+  
+        p {
+          font-size: 1rem;
+          color: rgb(223, 222, 222);
+        }
+      }
+    }
+  
+    .content {
+      margin-top: 50px;
+  
+      p {
+        font-size: 0.9rem;
+        color: gray;
+      }
+    }
+  }
+
+  .content_Ani {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 50px; 
+    background-color: #f9f9f9;
+    width: 70%;
+    margin: 0 auto; /* 섹션 전체를 중앙 정렬 */
+
+    .backgroundImage {
+      position: absolute; /* 배경 이미지를 절대 위치로 배치 */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 이미지 비율 유지하며 채움 */
+      z-index: 1;
+    }
+  
+    .textBox_Ani {
+      z-index: 2;
+      text-align: left;
+      margin-top: 20px;
+      margin-left: 20px;
+  
+      h4 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+  
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+  
+        span {
+          font-size: 3rem;
+          color: #007bff; /* 강조 색상 */
+        }
+      }
+  
+      p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+    }
+  
+    .foregroundImage {
+      position: relative; /* 텍스트 상자 아래 배치 */
+      z-index: 3;
+      margin-top: -150px;
+      margin-bottom: -30px;
+    }
+  }
+  
