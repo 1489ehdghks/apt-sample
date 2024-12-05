@@ -1,0 +1,10 @@
+@import '../../../shared/styles/variables';
+
+.system {
+  width: 100%;
+  background-color: #fff;
+
+  @media (max-width: $mobile) {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,49 @@
+@import '../../../shared/styles/variables';
+
+.notice-section {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 8px;
+
+  @media (max-width: $mobile) {
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .notice-content {
+    .notice-item {
+        margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #272727;
+        word-break: keep-all;
+        position: relative;
+        padding-left: 20px;
+
+        @media (max-width: $mobile) {
+          font-size: 14px;
+          line-height: 1.6;
+          padding-left: 16px;
+        }
+
+        .bullet {
+          position: absolute;
+          left: 0;
+          color: #006cb7;
+          font-weight: 500;
+        }
+      }
+
+      &:first-child p {
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+}

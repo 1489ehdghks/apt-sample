@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import XiMobileHeader from './XiMobileHeader';
 import './XiHeader.scss';
 
 const XiHeader = () => {
  const menuItems = [
    {
      title: '사업안내',
-     subItems: ['사업개요', '브랜드소개', '입지환경', '오시는길']
+     subItems: ['사업개요', '입지환경', '오시는길']
    },
    {
      title: '단지안내',
-     subItems: ['프리미엄','클럽자이안 1단지','클럽자이안 2단지','클럽클라우드','단지설계','단지배치도','SYSTEM','이동통신설비 협의결과서']
+     subItems: ['프리미엄','클럽자이안 1단지','클럽자이안 2단지','클럽클라우드','단지설계','단지배치도','동·호수배치도','SYSTEM']
    },
    {
      title: '세대안내',
@@ -33,16 +35,19 @@ const XiHeader = () => {
      subItems: []
    }
  ];
+ const isMobile = useMediaQuery({ maxWidth: 768 });
+
+ if (isMobile) {
+   return <XiMobileHeader />;
+ }
 
  return (
    <header className="xi-header">
      <div className="header-content">
-       {/* 로고 */}
        <Link to="/xi" className="logo">
          평촌자이 퍼스니티
        </Link>
 
-       {/* 네비게이션 메뉴 */}
        <nav className="main-nav">
          {menuItems.map((item, index) => (
            <div key={index} className="menu-item">
@@ -66,7 +71,10 @@ const XiHeader = () => {
 
        {/* 분양문의 번호 */}
        <div className="contact-number">
-         분양문의 <span className="phone">1833-4723</span>
+         분양문의
+         <a href="tel:1833-4723">
+            <span className="phone">1833-4723</span>
+          </a>
        </div>
      </div>
    </header>
