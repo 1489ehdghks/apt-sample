@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import XiMobileFooter from './XiMobileFooter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import './XiFooter.scss';
 
 const XiFooter = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  if (isMobile) {
+    return <XiMobileFooter />;
+  }
 
   return (
     <footer className="xi-footer">

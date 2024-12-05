@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import XiMobileHeader from './XiMobileHeader';
 import './XiHeader.scss';
 
 const XiHeader = () => {
@@ -33,16 +35,19 @@ const XiHeader = () => {
      subItems: []
    }
  ];
+ const isMobile = useMediaQuery({ maxWidth: 768 });
+
+ if (isMobile) {
+   return <XiMobileHeader />;
+ }
 
  return (
    <header className="xi-header">
      <div className="header-content">
-       {/* 로고 */}
        <Link to="/xi" className="logo">
          평촌자이 퍼스니티
        </Link>
 
-       {/* 네비게이션 메뉴 */}
        <nav className="main-nav">
          {menuItems.map((item, index) => (
            <div key={index} className="menu-item">
@@ -66,7 +71,10 @@ const XiHeader = () => {
 
        {/* 분양문의 번호 */}
        <div className="contact-number">
-         분양문의 <span className="phone">1833-4723</span>
+         분양문의
+         <a href="tel:1833-4723">
+            <span className="phone">1833-4723</span>
+          </a>
        </div>
      </div>
    </header>
