@@ -18,9 +18,7 @@ const LecielHeader = () => {
     사업안내: {
       items: [
         { name: '사업개요', path: '/overview' },
-        { name: '브랜드', path: '/brand' },
-        { name: '입지안내', path: '/location' },
-        { name: '오시는길', path: '/directions' }
+        { name: '입지안내/오시는길', path: '/location' },
       ]
     },
     프리미엄: {
