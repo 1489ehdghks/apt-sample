@@ -5,6 +5,9 @@ import LecielHeader from '../../widgets/Leciel/Header/LecielHeader';
 import ReservationPage from '../../pages/Leciel/itemPages/reservation/ReservationPage';
 import Overview from '../../pages/Leciel/itemPages/overview/overview';
 import Location from '../../pages/Leciel/itemPages/location/location';
+import APTlayout from '../../pages/Leciel/itemPages/COMPLEX/APTlayout';
+import APTplans from '../../pages/Leciel/itemPages/COMPLEX/APTplans';
+import PromoVideo from '../../pages/Leciel/itemPages/promovideo/promovideo';
 
 const LecielRoutes = () => {
   return (
@@ -14,12 +17,10 @@ const LecielRoutes = () => {
         <Route path="/" element={<LecielHome />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/APTlayout" element={<APTlayout />} />
+        <Route path="/APTplans" element={<APTplans />} />
+        <Route path="/promovideo" element={<PromoVideo />} />
         <Route path="/reservation" element={<ReservationPage />} />
-        {/*
-        <Route path="about" element={<LecielAbout />} />
-        <Route path="location" element={<LecielLocation />} />
-        <Route path="data" element={<LecielData/>} />
-        */}
       </Routes>
     </div>
 

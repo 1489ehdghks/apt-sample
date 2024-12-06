@@ -30,14 +30,13 @@ const LecielHeader = () => {
     },
     단지안내: {
       items: [
-        { name: '동호수배치도', path: '/layout' },
-        { name: '평면안내', path: '/plans' }
+        { name: '동호수배치도', path: '/APTlayout' },
+        { name: '평면안내', path: '/APTplans' }
       ]
     },
     홍보센터: {
       items: [
-        { name: '홍보영상', path: '/promo-video' },
-        { name: '언론보도', path: '/news' }
+        { name: '홍보영상', path: '/promovideo' },
       ]
     },
     예약센터: {

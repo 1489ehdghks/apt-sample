@@ -1,0 +1,82 @@
+.container {
+  overflow: auto; /* 스크롤을 가능하게 함 */
+  height: 100vh; /* 필요 시, 전체 화면 높이를 명시적으로 설정 */
+  background: linear-gradient(160deg, #1a1a1a 0%, #262626 100%); /* 배경을 그라데이션으로 변경 */
+}
+
+  .banner {
+    .imgBox {
+      position: relative;
+  
+      img {
+        width: 100%;
+      }
+  
+      .textBox1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+  
+        h2 {
+          font-size: 48px;
+          color: white;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+  
+        h4 {
+          font-size: 1.5rem;
+          color: white;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+  
+  .textBox2 {
+    text-align: center;
+    margin-top: 200px;
+  
+    p2 {
+      font-size: 2.5rem;
+      color: white;
+    }
+    
+    h4 {
+      margin-top: 100px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.7rem;
+      margin-top: 30px;
+      margin-bottom: 70px;
+      color: white;
+    }
+
+    h1 {
+      font-size: 1rem;
+      margin-bottom: 70px;
+      color: white;
+    }
+  }
+  
+  .contentBox {
+    margin: 30px 20px;
+  
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .content {
+      margin-top: 50px;
+      margin-bottom: 70px;
+  
+      p {
+        font-size: 0.9rem;
+        color: gray;
+      }
+    }
+  }
