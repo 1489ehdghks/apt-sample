@@ -23,9 +23,8 @@ const LecielHeader = () => {
     },
     프리미엄: {
       items: [
-        { name: 'Concierge Service10', path: '/concierge' },
-        { name: 'Smart System20', path: '/smart-system' },
-        { name: 'Premium Community30', path: '/premium-community' }
+        { name: 'Service & Smart System', path: '/service' },
+        { name: 'Premium Community', path: '/premiumcommunity' }
       ]
     },
     단지안내: {
