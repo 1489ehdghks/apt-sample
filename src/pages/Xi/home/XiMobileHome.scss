@@ -1,0 +1,129 @@
+.xi-mobile-home {
+    width: 100%;
+    min-height: calc(55vh); // 모바일 헤더 높이 제외
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+  
+    .carousel-container {
+      width: 100%;
+      height: 40vh;
+      position: relative;
+      overflow: hidden;
+  
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  
+    .thumbnail-nav {
+      padding: 10px 5px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.8);
+  
+      .thumbnail {
+        width: 50px; // 크기 조정
+        height: 28px;
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+        border: 1.5px solid transparent;
+  
+        &.active {
+          border-color: white;
+        }
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        .progress-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          background: white;
+        }
+      }
+    }
+  
+    .content-section {
+      padding: 15px;
+      background: #000;
+      margin-top: 0; // 마진 제거
+  
+      .quick-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+  
+        .link-item {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 15px;
+          border-radius: 8px;
+          text-decoration: none;
+          color: white;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          transition: background-color 0.2s ease;
+  
+          &:active {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+  
+          .icon {
+            font-size: 24px;
+            margin-bottom: 2px;
+          }
+  
+          span {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  
+  // 작은 화면 대응
+  @media screen and (max-height: 600px) {
+    .xi-mobile-home {
+      .carousel-container {
+        height: 35vh;
+      }
+  
+      .content-section {
+        padding: 10px;
+  
+        .quick-links {
+          gap: 10px;
+  
+          .link-item {
+            padding: 12px;
+  
+            .icon {
+              font-size: 20px;
+            }
+  
+            span {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }

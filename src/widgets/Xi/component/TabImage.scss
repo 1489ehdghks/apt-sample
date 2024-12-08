@@ -4,56 +4,46 @@
   width: 100%;
   max-width: $desktop;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 20px;
 
   @media (max-width: $mobile) {
-    padding: 40px 15px;
+    padding: 20px 15px;
   }
 
   .title {
     text-align: center;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     color: #111;
     letter-spacing: -0.5px;
 
     @media (max-width: $mobile) {
       font-size: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
   }
 
   .tab-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     position: relative;
     
     &:after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       width: 100%;
-      max-width: 600px;
       height: 1px;
       background-color: #ddd;
-
-      @media (max-width: $mobile) {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: $mobile) {
-      margin-bottom: 30px;
     }
 
     .tab-button {
       position: relative;
-      padding: 16px 40px;
-      font-size: 18px;
+      padding: 12px 30px;
+      font-size: 16px;
       border: none;
       background: none;
       color: #888;
@@ -62,8 +52,8 @@
       font-weight: 500;
 
       @media (max-width: $mobile) {
-        padding: 12px 24px;
-        font-size: 16px;
+        padding: 10px 20px;
+        font-size: 15px;
       }
 
       &:after {
@@ -99,26 +89,22 @@
     .images-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      
-      @media (max-width: $mobile) {
-        gap: 20px;
-      }
+      gap: 20px;
 
       .content-image {
         width: 100%;
         height: auto;
         display: block;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
 
         @media (max-width: $mobile) {
-          border-radius: 8px;
+          border-radius: 6px;
         }
 
         &:hover {
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
       }
     }

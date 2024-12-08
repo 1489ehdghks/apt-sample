@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './TabImage.scss';
 const TabImage = ({ tabData, title }) => {
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);
 

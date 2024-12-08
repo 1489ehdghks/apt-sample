@@ -29,22 +29,13 @@
       display: flex;
       gap: 40px;
       height: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
       
-      &::-webkit-scrollbar {
-        display: none;
-      }
- 
       .menu-item {
         position: relative;
         height: 100%;
         display: flex;
         align-items: center;
         cursor: pointer;
-        flex-shrink: 0;
  
         .menu-title {
           font-size: 16px;
@@ -52,7 +43,6 @@
           height: 100%;
           display: flex;
           align-items: center;
-          transition: color 0.3s ease;
           white-space: nowrap;
  
           &:hover {
@@ -60,37 +50,39 @@
           }
         }
  
+        &:hover .sub-menu {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+ 
         .sub-menu {
           position: absolute;
           top: 100%;
           left: 0;
-          min-width: 200px;
           background: rgba(30, 30, 30, 0.95);
-          visibility: hidden;
+          min-width: 200px;
+          display: none;
           opacity: 0;
-          transform: translateY(10px);
+          visibility: hidden;
+          transform: translateY(20px);
           transition: all 0.3s ease;
+          padding: 10px 0;
           
           .sub-item {
             display: block;
             color: white;
             text-decoration: none;
             padding: 12px 20px;
-            transition: all 0.3s ease;
+            font-size: 14px;
             white-space: nowrap;
+            transition: all 0.2s ease;
  
             &:hover {
               background: rgba(255, 255, 255, 0.1);
               color: #ffd700;
             }
-          }
-        }
- 
-        &:hover {
-          .sub-menu {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
           }
         }
       }
@@ -120,6 +112,12 @@
     .header-content {
       .main-nav {
         gap: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
   }

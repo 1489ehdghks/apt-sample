@@ -1,0 +1,248 @@
+페이지 추가 방법
+
+1. AppRoutes.js에서 아파트 라우터 생성
+2. 아파트 라우터에서 컴포넌트 불러오기
+3. 아파트의 헤더에서 경로 설정
+4. 페이지 컴포넌트 생성
+
+//이미지와 텍스트만 있는 페이지 (XiLocation.jsx)
+
+import React from 'react';
+import XilocationPic from '../../../shared/asset/Xi/입지환경1.jpg'
+import './XiLocation.scss';
+
+const XiLocation = () => {
+  return (
+    <div className="location-info">
+      <h1 className="title">입지환경</h1>
+      
+      <div className="map-container">
+        <img src={XilocationPic} alt="평촌자이 퍼스니티 위치도" className="main-map" />
+      </div>
+    </div>
+  );
+};
+
+export default XiLocation;
+
+
+@import '../../../shared/styles/variables'; 
+
+.location-info {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+    padding: 60px 20px 120px;
+  
+    @media (max-width: $mobile) {
+      padding: 30px 15px 60px;
+    }
+  
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #333;
+      position: relative;
+      
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: $primary-color;
+      }
+    }
+  
+    .map-container {
+      margin-bottom: 40px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+    }
+}
+
+
+
+
+//이미지와 텍스트, 탭이 있는 페이지 (마감재리스트.jsx)
+import React from 'react';
+import './마감재리스트.scss';
+import TabImage from '../../../widgets/Xi/component/TabImage';
+import 설비 from '../../../shared/asset/Xi/마감재리스트-설비.jpg';
+import 인테리어 from '../../../shared/asset/Xi/마감재리스트-인테리어.jpg';
+import 전기 from '../../../shared/asset/Xi/마감재리스트-전기.jpg';
+
+const 마감재리스트 = () => {
+  const tabData = [
+    {
+      id: '설비',
+      label: '설비',
+      image: 설비,
+      alt: '설비'
+    },
+    {
+      id: '인테리어',
+      label: '인테리어',
+      image: 인테리어,
+      alt: '인테리어'
+    },
+    {
+      id: '전기',
+      label: '전기',
+      image: 전기,
+      alt: '전기'
+    }
+  ];
+
+  return (
+    <div className="마감재리스트">
+      <TabImage 
+        title="마감재리스트" 
+        tabData={tabData}
+      />
+    </div>
+  );
+};
+
+
+export default 마감재리스트;
+
+@import '../../../shared/styles/variables';
+
+.마감재리스트 {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  background-color: #fff;
+  overflow-y: auto;
+
+  // 스크롤바 스타일링
+    &::-webkit-scrollbar {
+        width: 12px;
+      }
+  
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+  
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+  
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+  
+    @media (max-width: $mobile) {
+        height: calc(100vh - 200px);
+        padding: 0 15px;
+  
+    &::-webkit-scrollbar {
+          width: 4px;
+        }
+      }
+
+  @media (max-width: $mobile) {
+    min-height: calc(100vh - 60px);
+    padding-top: 60px;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+    height: calc(100vh - 250px);
+    padding: 0 20px;
+
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+//이미지와 경고문구가 있는 페이지
+
+
+import React from 'react';
+import './ClubXian1.scss';
+import ClubXianNotice from '../../../widgets/Xi/component/ClubXianNotice';
+import 클럽자이안1 from '../../../shared/asset/Xi/클럽자이안1.jpg';
+
+const ClubXian1 = () => {
+  const notices = [
+    'CLUB XIAN의 이미지는 실제와 차이가 있습니다.',
+    'CLUB XIAN 내 가구 및 운동기구의 수량 및 배치는 실제와 차이가 있을 수 있으며, 기타 집기류는 별도 제공되지 않습니다.',
+    'CLUB XIAN(피트니스클럽, GX룸, 골프연습장, 작은도서관, 라운지 등), 부속동(아너스클럽 등) 및 일부 공용부(지하주차장 및 아파트 PIT)에는 입주지정기간을 전후하여 입주지원센터가 설치되어 입주관리업무를 진행하며, 입주 후 약 27개월까지 AS업무를 위한 사무실 및 창고가 설치되어 운영됩니다.',
+    'CLUB XIAN 내 운동기구는 준공 후 입주지정기간이 종료된 이후 설치될 수도 있습니다.',
+    '커뮤니티 시설 등의 부대시설의 성능개선 또는 인·허가 협의결과에 따라 실 시공 시 위치, 동선, 실내구획, 입면 디자인, 마감재, 골조 사이즈 및 위치 등이 일부 변경될 수 있으며, 설계변경이 진행될 예정입니다.',
+    '상기 CG는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 차이가 있을 수 있으며, CLUB XIAN 이미지에는 스케일이 미반영되었습니다.'
+  ];
+
+  return (
+    <div className="club-xian1">
+      <div className="main-content">
+        <div className="image-section">
+          <img src={클럽자이안1} alt="클럽자이안 1단지" />
+        </div>
+      </div>
+      <ClubXianNotice notices={notices} />
+    </div>
+  );
+};
+
+export default ClubXian1;
+@import '../../../shared/styles/variables';
+
+.club-xian1 {
+  width: 100%;
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: 80px 20px;
+
+  @media (max-width: $mobile) {
+    padding: 40px 15px;
+  }
+
+  .main-content {
+    margin-bottom: 60px;
+
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .image-section {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      @media (max-width: $mobile) {
+        border-radius: 4px;
+      }
+    }
+  }
+}

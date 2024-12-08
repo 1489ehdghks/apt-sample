@@ -14,6 +14,11 @@ import ComplexLayout from '../../pages/Xi/aptInfo/ComplexLayout';
 import System from '../../pages/Xi/aptInfo/System';
 import XiHeader from '../../widgets/Xi/Header/XiHeader';
 import XiFooter from '../../widgets/Xi/Footer/XiFooter';
+import 기본제공품목 from '../../pages/Xi/세대안내/기본제공품목';
+import 평면정보 from '../../pages/Xi/세대안내/평면정보';
+import 마감재리스트 from '../../pages/Xi/세대안내/마감재리스트';
+import 일반공급 from '../../pages/Xi/청약안내/일반공급';
+import 특별공급 from '../../pages/Xi/청약안내/특별공급';
 import './XiRoutes.js.scss'
 
 
@@ -39,10 +44,16 @@ const XiRoutes = () => {
         <Route path="/단지배치도" element={<SitePlan />}/>
         <Route path="/동·호수배치도" element={<ComplexLayout />}/>
         <Route path="/system" element={<System />}/>
+        <Route path="/system" element={<System />}/>
 
         {/* 세대안내 */}
-        <Route path="/기본제공품목" element={<System />}/>
+        <Route path="/기본제공품목" element={<기본제공품목 />}/>
+        <Route path="/평면정보" element={<평면정보 />}/>
+        <Route path="/마감재리스트" element={<마감재리스트 />}/>
 
+        {/* 청약안내 */}
+        <Route path="/일반공급" element={<일반공급 />}/>
+        <Route path="/특별공급" element={<특별공급 />}/>
       </Routes>
       </div>
       <XiFooter/>

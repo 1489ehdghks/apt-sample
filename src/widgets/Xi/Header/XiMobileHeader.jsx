@@ -17,7 +17,7 @@ const XiMobileHeader = () => {
     },
     {
       title: '세대안내',
-      subItems: ['기본제공품목', '평면정보']
+      subItems: ['기본제공품목', '평면정보','E-모델하우스','마감재리스트','항공VR']
     },
     {
       title: '청약안내',
@@ -48,13 +48,20 @@ const XiMobileHeader = () => {
     }));
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setOpenMenus({});
+  };
+
   return (
     <header className="xi-mobile-header">
       <div className="header-top">
         <button className="menu-button" onClick={toggleMenu}>
           {isMenuOpen ? 'X' : '≡'}
         </button>
-        <h1 className="logo">평촌자이 퍼스니티</h1>
+        <Link to="/xi" className="logo" onClick={closeMenu}>
+          자이 퍼스니티
+        </Link>
         <a href="tel:1833-4723" className="phone-number">
           분양문의<br />1833-4723
         </a>
@@ -82,6 +89,7 @@ const XiMobileHeader = () => {
                       <li key={subIndex}>
                         <Link 
                           to={`/xi/${subItem.toLowerCase().replace(/ /g, '-')}`}
+                          onClick={closeMenu}
                         >
                           {subItem}
                         </Link>
