@@ -7,6 +7,12 @@ import './XiHeader.scss';
 const XiHeader = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
+  const handleEModelhouse = (e) => {
+    e.preventDefault();
+    window.open('https://www.xi-event.com/templete/pcxi_firsnity/vr2/tour_unit.html', '_blank');
+  };
+
+
   const menuItems = [
     {
       title: '사업안내',
@@ -18,7 +24,7 @@ const XiHeader = () => {
     },
     {
       title: '세대안내',
-      subItems: ['기본제공품목', '평면정보', '마감재리스트']
+      subItems: ['기본제공품목', '평면정보','E-모델하우스','마감재리스트']
     },
     {
       title: '청약안내',
@@ -28,18 +34,10 @@ const XiHeader = () => {
       title: '분양안내',
       subItems: ['분양일정', '입주자 모집공고', '인지세 납부안내문']
     },
-    {
-      title: '홍보센터',
-      subItems: ['자이TV', '언론보도', '청약이벤트']
-    },
-    {
-      title: '관심고객등록',
-      subItems: []
-    }
   ];
 
   if (isMobile) {
-    return <XiMobileHeader />;
+    return <XiMobileHeader menuItems={menuItems}/>;
   }
 
   return (
@@ -58,13 +56,24 @@ const XiHeader = () => {
               {item.subItems.length > 0 && (
                 <div className="sub-menu">
                   {item.subItems.map((subItem, subIndex) => (
-                    <Link 
-                      key={subIndex}
-                      to={`/xi/${subItem.toLowerCase().replace(/ /g, '-')}`}
-                      className="sub-item"
-                    >
-                      {subItem}
-                    </Link>
+                    subItem === 'E-모델하우스' ? (
+                      <a 
+                        key={subIndex}
+                        href="#"
+                        className="sub-item"
+                        onClick={handleEModelhouse}
+                      >
+                        {subItem}
+                      </a>
+                    ) : (
+                      <Link 
+                        key={subIndex}
+                        to={`/xi/${subItem.toLowerCase().replace(/ /g, '-')}`}
+                        className="sub-item"
+                      >
+                        {subItem}
+                      </Link>
+                    )
                   ))}
                 </div>
               )}

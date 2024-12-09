@@ -10,13 +10,11 @@ import './XiMobileHome.scss';
 
 const XiMobileHome = () => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const [key, setKey] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
 
   const images = [image1, image2, image3, image4, image5];
 
   const paginate = (newDirection) => {
-    setKey(prev => prev + 1);
     const newPage = page + newDirection;
     if (newPage < 0) {
       setPage([images.length - 1, newDirection]);
@@ -27,11 +25,12 @@ const XiMobileHome = () => {
     }
   };
 
-  const handleImageChange = (index) => {
-    setKey(prev => prev + 1);
-    const direction = index > page ? 1 : -1;
-    setPage([index, direction]);
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      paginate(1);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [page]);
 
   const handleTouchStart = (e) => {
     setTouchStart(e.touches[0].clientX);
@@ -39,27 +38,18 @@ const XiMobileHome = () => {
 
   const handleTouchMove = (e) => {
     if (!touchStart) return;
-
     const currentTouch = e.touches[0].clientX;
     const diff = touchStart - currentTouch;
-
-    if (Math.abs(diff) > 50) { // 최소 스와이프 거리
-      if (diff > 0) {
-        paginate(1); // 왼쪽으로 스와이프
-      } else {
-        paginate(-1); // 오른쪽으로 스와이프
-      }
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) paginate(1);
+      else paginate(-1);
       setTouchStart(null);
     }
   };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      paginate(1);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, [page]);
+  const handleEModelhouse = (e) => {
+    e.preventDefault();
+    window.open('https://www.xi-event.com/templete/pcxi_firsnity/vr2/tour_unit.html', '_blank');
+  };
 
   const variants = {
     enter: (direction) => ({
@@ -80,64 +70,72 @@ const XiMobileHome = () => {
 
   return (
     <div className="xi-mobile-home">
-      <div 
-        className="carousel-container"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={() => setTouchStart(null)}
-      >
-        <AnimatePresence custom={direction} initial={false}>
-          <motion.div
-            key={page}
-            className="slide"
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
-            }}
-            style={{
-              backgroundImage: `url(${images[page]})`
-            }}
-          />
-        </AnimatePresence>
-      </div>
+      <div className="visual-section">
+        <div 
+          className="carousel-container"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={() => setTouchStart(null)}
+        >
+          <AnimatePresence custom={direction} initial={false}>
+            <motion.div
+              key={page}
+              className="slide"
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+              style={{
+                backgroundImage: `url(${images[page]})`
+              }}
+            />
+          </AnimatePresence>
+        </div>
 
-      <div className="content-section">
-        <div className="quick-links">
-          <Link to="/xi/promotional-video" className="link-item">
-            <div className="icon">▶</div>
-            <span>홍보영상</span>
-          </Link>
-          <Link to="/xi/location" className="link-item">
-            <div className="icon">🗺</div>
-            <span>오시는길</span>
-          </Link>
+        <div className="indicator">
+          {images.map((_, index) => (
+            <div 
+              key={index} 
+              className={`dot ${page === index ? 'active' : ''}`}
+              onClick={() => setPage([index, index > page ? 1 : -1])}
+            >
+              {page === index && (
+                <motion.div 
+                  className="progress"
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 3, ease: 'linear' }}
+                />
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="thumbnail-nav">
-        {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className={`thumbnail ${page === index ? 'active' : ''}`}
-            onClick={() => handleImageChange(index)}
-          >
-            <img src={image} alt={`썸네일 ${index + 1}`} />
-            {page === index && (
-              <motion.div 
-                key={`progress-${key}`}
-                className="progress-bar"
-                initial={{ width: '0%' }}
-                animate={{ width: '100%' }}
-                transition={{ duration: 3, ease: 'linear' }}
-              />
-            )}
-          </motion.div>
-        ))}
+      <div className="menu-section">
+        <div className="menu-grid">
+          <Link to="/xi/입지환경" className="menu-item">
+            <div className="icon">🌆</div>
+            <span>입지환경</span>
+          </Link>
+          <a href="#" onClick={handleEModelhouse} className="menu-item">
+            <div className="icon">🏠</div>
+            <span>E-모델하우스</span>
+          </a>
+          <Link to="/xi/평면정보" className="menu-item">
+            <div className="icon">📋</div>
+            <span>평면정보</span>
+          </Link>
+          <Link to="/xi/단지배치도" className="menu-item">
+            <div className="icon">🏢</div>
+            <span>단지배치도</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

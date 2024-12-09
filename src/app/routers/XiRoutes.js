@@ -19,6 +19,9 @@ import 평면정보 from '../../pages/Xi/세대안내/평면정보';
 import 마감재리스트 from '../../pages/Xi/세대안내/마감재리스트';
 import 일반공급 from '../../pages/Xi/청약안내/일반공급';
 import 특별공급 from '../../pages/Xi/청약안내/특별공급';
+import 분양일정 from '../../pages/Xi/분양안내/분양일정';
+import 입주자모집공고 from '../../pages/Xi/분양안내/입주자모집공고';
+import 납부안내문 from '../../pages/Xi/분양안내/납부안내문';
 import './XiRoutes.js.scss'
 
 
@@ -54,6 +57,11 @@ const XiRoutes = () => {
         {/* 청약안내 */}
         <Route path="/일반공급" element={<일반공급 />}/>
         <Route path="/특별공급" element={<특별공급 />}/>
+
+        {/* 분양안내 */}
+        <Route path="/분양일정" element={<분양일정 />}/>
+        <Route path="/입주자-모집공고" element={<입주자모집공고 />}/>
+        <Route path="/인지세-납부안내문" element={<납부안내문 />}/>
       </Routes>
       </div>
       <XiFooter/>

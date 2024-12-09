@@ -4,10 +4,19 @@
   width: 100%;
   max-width: $desktop;
   margin: 0 auto;
-  padding: 40px 20px;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 40px 20px 180px; 
 
   @media (max-width: $mobile) {
-    padding: 20px 15px;
+    min-height: calc(100vh - 60px);
+    padding: 20px 15px 120px;
+  }
+
+  .tab-header {
+    padding: 0 20px;
   }
 
   .title {
@@ -83,30 +92,64 @@
     }
   }
 
+  .content-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px 120px;
+    margin-top: 30px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0 15px 80px;
+      margin-top: 20px;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+    }
+  }
+
   .image-container {
     width: 100%;
-    
-    .images-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+  }
 
-      .content-image {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
+  .images-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-        @media (max-width: $mobile) {
-          border-radius: 6px;
-        }
+  .content-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 
-        &:hover {
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-      }
+    @media (max-width: $mobile) {
+      border-radius: 6px;
+    }
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
   }
 }

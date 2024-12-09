@@ -39,20 +39,4 @@
     min-height: calc(100vh - 60px);
     padding-top: 60px;
   }
-
-  .image-container {
-    width: 100%;
-    max-width: $desktop;
-    margin: 0 auto;
-    height: calc(100vh - 250px);
-    padding: 0 20px;
-
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
 }

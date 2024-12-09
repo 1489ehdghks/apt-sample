@@ -5,6 +5,12 @@ import './XiMobileHeader.scss';
 const XiMobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenus, setOpenMenus] = useState({});
+  const handleEModelhouse = (e) => {
+    e.preventDefault();
+    window.open('https://www.xi-event.com/templete/pcxi_firsnity/vr2/tour_unit.html', '_blank');
+    closeMenu();
+  };
+  
 
   const menuItems = [
     {
@@ -17,23 +23,15 @@ const XiMobileHeader = () => {
     },
     {
       title: '세대안내',
-      subItems: ['기본제공품목', '평면정보','E-모델하우스','마감재리스트','항공VR']
+      subItems: ['기본제공품목', '평면정보','E-모델하우스','마감재리스트']
     },
     {
       title: '청약안내',
-      subItems: ['청약체크포인트', '일반공급', '특별공급', '인터넷 청약안내']
+      subItems: ['일반공급', '특별공급']
     },
     {
       title: '분양안내',
       subItems: ['분양일정', '입주자 모집공고', '인지세 납부안내문']
-    },
-    {
-      title: '홍보센터',
-      subItems: ['자이TV', '언론보도', '청약이벤트']
-    },
-    {
-      title: '관심고객등록',
-      subItems: []
     }
   ];
 
@@ -85,16 +83,25 @@ const XiMobileHeader = () => {
                 </div>
                 {item.subItems.length > 0 && openMenus[index] && (
                   <ul className="sub-menu">
-                    {item.subItems.map((subItem, subIndex) => (
-                      <li key={subIndex}>
-                        <Link 
-                          to={`/xi/${subItem.toLowerCase().replace(/ /g, '-')}`}
-                          onClick={closeMenu}
-                        >
-                          {subItem}
-                        </Link>
-                      </li>
-                    ))}
+                 {item.subItems.map((subItem, subIndex) => (
+  <li key={subIndex}>
+    {subItem === 'E-모델하우스' ? (
+      <a 
+        href="#"
+        onClick={handleEModelhouse}
+      >
+        {subItem}
+      </a>
+    ) : (
+      <Link 
+        to={`/xi/${subItem.toLowerCase().replace(/ /g, '-')}`}
+        onClick={closeMenu}
+      >
+        {subItem}
+      </Link>
+    )}
+  </li>
+))}
                   </ul>
                 )}
               </li>

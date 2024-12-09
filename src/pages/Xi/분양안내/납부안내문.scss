@@ -1,0 +1,49 @@
+@import '../../../shared/styles/variables'; 
+
+.location-info {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+    padding: 60px 20px 120px;
+  
+    @media (max-width: $mobile) {
+      padding: 30px 15px 60px;
+    }
+  
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #333;
+      position: relative;
+      
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: $primary-color;
+      }
+    }
+  
+    .map-container {
+      margin-bottom: 40px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+    }
+}
