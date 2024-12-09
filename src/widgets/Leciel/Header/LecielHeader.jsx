@@ -23,21 +23,19 @@ const LecielHeader = () => {
     },
     프리미엄: {
       items: [
-        { name: 'Concierge Service10', path: '/concierge' },
-        { name: 'Smart System20', path: '/smart-system' },
-        { name: 'Premium Community30', path: '/premium-community' }
+        { name: 'Service & Smart System', path: '/service' },
+        { name: 'Premium Community', path: '/premiumcommunity' }
       ]
     },
     단지안내: {
       items: [
-        { name: '동호수배치도', path: '/layout' },
-        { name: '평면안내', path: '/plans' }
+        { name: '동호수배치도', path: '/APTlayout' },
+        { name: '평면안내', path: '/APTplans' }
       ]
     },
     홍보센터: {
       items: [
-        { name: '홍보영상', path: '/promo-video' },
-        { name: '언론보도', path: '/news' }
+        { name: '홍보영상', path: '/promovideo' },
       ]
     },
     예약센터: {
