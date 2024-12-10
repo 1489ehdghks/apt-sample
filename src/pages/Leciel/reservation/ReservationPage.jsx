@@ -55,6 +55,7 @@ const ReservationPage = () => {
 
     try {
       const response = await axios.post('http://13.209.59.247/api/landing/counsel/application', {
+        aptBranch: "르씨엘",
         name: formData.name,
         phone_number: formData.phone_number,
         apartment_id: formData.apartment_id,

@@ -1,0 +1,40 @@
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .mobile-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .mobile-nav-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  @media (min-width: 768px) {
+    .mobile-header {
+      display: none;
+    }
+  }

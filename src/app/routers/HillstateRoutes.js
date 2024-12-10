@@ -9,11 +9,6 @@ const HillstateRoutes = () => {
       <LecielHeader/>
       <Routes>
         <Route path="/" element={<LecielHome />} />
-        {/*
-        <Route path="about" element={<LecielAbout />} />
-        <Route path="location" element={<LecielLocation />} />
-        <Route path="data" element={<LecielData/>} />
-        */}
       </Routes>
     </div>
 
