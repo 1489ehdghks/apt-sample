@@ -1,0 +1,140 @@
+.container {
+    overflow: auto;
+    height: 100vh;
+    background: linear-gradient(160deg, #f5f5f5 0%, #ffffff 100%); // 힐스테이트는 밝은 톤으로 변경
+  
+    .banner {
+      .imgBox {
+        position: relative;
+    
+        img {
+          width: 100%;
+          height: 80vh;
+          object-fit: cover;
+        }
+    
+        .textBox1 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+    
+          h2 {
+            font-size: 54px;
+            color: #333333;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+          }
+    
+          h4 {
+            font-size: 1.8rem;
+            color: #555555;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    
+    .textBox2, .textBox3 {
+      text-align: center;
+      margin-top: 150px;
+      padding: 0 50px;
+    
+      p2 {
+        font-size: 2.2rem;
+        color: #333333;
+        font-weight: 600;
+      }
+      
+      h4 {
+        margin-top: 40px;
+        color: #666666;
+        font-size: 1.4rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        margin-top: 25px;
+        margin-bottom: 80px;
+        color: #444444;
+        line-height: 1.6;
+      }
+    }
+    
+    .contentBox {
+      margin: 50px 40px;
+      
+      .cardBox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    
+        .card {
+          background: #ffffff;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          padding: 30px;
+          transition: transform 0.3s ease;
+    
+          &:hover {
+            transform: translateY(-5px);
+          }
+    
+          h4 {
+            font-size: 1.4rem;
+            color: #333333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+          }
+    
+          p {
+            font-size: 1.1rem;
+            color: #666666;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  
+    .content_Ani {
+      position: relative;
+      padding: 80px 60px;
+      background-color: #f8f9fa;
+      width: 80%;
+      margin: 100px auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  
+      .textBox_Ani {
+        position: relative;
+        z-index: 2;
+        
+        h4 {
+          font-size: 1.6rem;
+          color: #444444;
+          margin-bottom: 15px;
+        }
+    
+        h2 {
+          font-size: 2.4rem;
+          font-weight: bold;
+          margin-bottom: 30px;
+          color: #222222;
+    
+          span {
+            font-size: 3.2rem;
+            color: #2c5282;
+          }
+        }
+    
+        p {
+          font-size: 1.2rem;
+          line-height: 1.8;
+          color: #666666;
+        }
+      }
+    }
+  }

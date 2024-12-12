@@ -1,14 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LecielHome from '../../pages/Leciel/home/LecielHome';
-import LecielHeader from '../../widgets/Leciel/Header/LecielHeader';
-
+import HillstateHeader from '../../widgets/Hillstate/HillstateHeader';
+import HillstateHome from '../../pages/Hillstate/HillstateHome';
 const HillstateRoutes = () => {
   return (
     <div>
-      <LecielHeader/>
+      <HillstateHeader/>
       <Routes>
-        <Route path="/" element={<LecielHome />} />
+        <Route path="/" element={<HillstateHome />} />
       </Routes>
     </div>
 
