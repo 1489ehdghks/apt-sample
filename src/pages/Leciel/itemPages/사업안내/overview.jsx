@@ -3,13 +3,9 @@ import OverviewImage from "../../../../shared/asset/Leciel/overview.jpg";
 import OverviewImage2 from "../../../../shared/asset/Leciel/sub01-1.jpg";
 import BrandImage from "../../../../shared/asset/Leciel/sub01-2-2.png";
 import BrandImage2 from "../../../../shared/asset/Leciel/sub01-2-1.jpg";
-import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
 import "./overview.scss";
 
 const Overview = () => {
-  const topPage = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <div className="container">
@@ -93,10 +89,6 @@ const Overview = () => {
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="section fp-auto-height">
-        <LecielFooter />
       </div>
     </div>
   );

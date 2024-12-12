@@ -14,7 +14,6 @@ import CommunityImege_4_2 from "../../../../shared/asset/Leciel/sub04-4-2.png";
 import CommunityImege_1_0 from "../../../../shared/asset/Leciel/sub04-1-0.jpg";
 import CommunityImege_1_1 from "../../../../shared/asset/Leciel/sub04-1-1.png";
 import CommunityImege_1_2 from "../../../../shared/asset/Leciel/sub04-1-2.png";
-import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
 import "./PremiumCommunity.scss";
 
 const PremiumCommunity = () => {
@@ -91,10 +90,6 @@ const PremiumCommunity = () => {
             것으로 실제와 차이가 있을 수 있습니다.
           </p>
         </div>
-      </div>
-
-      <div className="section fp-auto-height">
-        <LecielFooter />
       </div>
     </div>
   );

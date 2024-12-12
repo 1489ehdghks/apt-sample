@@ -4,13 +4,9 @@ import ServiceImege from "../../../../shared/asset/Leciel/sub02-2-1.jpg";
 import ServiceImege2 from "../../../../shared/asset/Leciel/sub02-2-2.jpg";
 import SystemImege from "../../../../shared/asset/Leciel/sub02-3-1.jpg";
 import SystemImege2 from "../../../../shared/asset/Leciel/sub02-3-2.jpg";
-import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
 import "./Service.scss";
 
 const Service = () => {
-  const topPage = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <div className="container">
@@ -53,10 +49,6 @@ const Service = () => {
             <img src={SystemImege2} alt="시스템 이미지2"/>
           </div>
         </div>
-      </div>
-
-      <div className="section fp-auto-height">
-        <LecielFooter />
       </div>
     </div>
   );

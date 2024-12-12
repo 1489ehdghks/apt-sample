@@ -5,12 +5,9 @@ import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
 import "./APTlayout.scss";
 
 const APTlayout = () => {
-  const topPage = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
-    <div className="container">
+    <div className="layout-container">
       <div className="wrap">
 
         <div className="banner">
@@ -45,7 +42,7 @@ const APTlayout = () => {
         </div>
       </div>
 
-      <div className="section fp-auto-height">
+      <div className="Le-footer">
         <LecielFooter />
       </div>
     </div>
