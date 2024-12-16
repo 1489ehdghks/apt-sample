@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import LeMobileHeader from './LeMobileHeader'; 
+import { useMediaQuery } from 'react-responsive';
 import './LecielHeader.scss';
 
 const LecielHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,13 +47,16 @@ const LecielHeader = () => {
       ]
     }
   };
-  
+
+  if (isMobile) {
+    return <LeMobileHeader menuItems={menuItems} />;
+  }
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="header-container">
+    <header className={`Le-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="Le-header-container">
         <Link to="/leciel" className="logo">
-          태양아너스 르씨엘
+          태왕아너스 르씨엘
         </Link>
 
         <nav className="main-nav">
@@ -60,7 +66,7 @@ const LecielHeader = () => {
               <div className="submenu">
                 {items.map(({ name, path }) => (
                   <Link key={name} to={`/leciel${path}`} className="submenu-item">
-                  {name}
+                    {name}
                   </Link>
                 ))}
               </div>
@@ -75,6 +81,5 @@ const LecielHeader = () => {
     </header>
   );
 };
-
 
 export default LecielHeader;

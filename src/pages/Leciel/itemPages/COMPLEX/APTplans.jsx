@@ -7,7 +7,6 @@ import img84D from "../../../../shared/asset/Leciel/84D_fin.jpg";
 import img84E from "../../../../shared/asset/Leciel/84E_fin.jpg";
 import img84F from "../../../../shared/asset/Leciel/84F_fin.jpg";
 import img84G from "../../../../shared/asset/Leciel/84G_fin.jpg";
-import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
 import "./APTplans.scss";
 
 const APTplans = () => {
@@ -83,10 +82,6 @@ const APTplans = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="section fp-auto-height">
-        <LecielFooter />
       </div>
     </div>
   );
