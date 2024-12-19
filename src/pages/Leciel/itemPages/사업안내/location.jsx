@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewImage from "../../../../shared/asset/Leciel/overview.jpg";
+import Banner from '../../../../widgets/Leciel/component/Banner';
 import LocationImage from "../../../../shared/asset/Leciel/sub01-3-1.png";
 import LocationImage2 from "../../../../shared/asset/Leciel/sub01-3-2.png";
 import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
@@ -21,26 +21,19 @@ const Location = () => {
 
   return (
     <div className="location-page">
-      <div className="banner">
-        <div className="imgBox">
-          <img src={OverviewImage} alt="사업 개요 배너 이미지" />
-          <div className="textBox1">
-            <h2>ABOUT</h2>
-            <h4>사업안내</h4>
-          </div>
-        </div>
-      </div>
+      
+      <Banner title="ABOUT" subtitle="사업안내" />
 
       <div className="textBox2">
         <p2>입지안내</p2>
         <h4>천안역 태왕아너스 르씨엘</h4>
         <p>내 집 마련의 현명한 시작</p>
         <img src={LocationImage} alt="입지 안내 이미지" className="image-default" />
-  <img src={LocationImage2} alt="입지 안내 이미지2" className="image-with-bg" />
+        <img src={LocationImage2} alt="입지 안내 이미지2" className="image-with-bg" />
       </div>
 
       {/* 위치 섹션 */}
-      <div className="third-content">
+      <div className="location-content">
         <motion.div
           className="location-header"
           initial={{ opacity: 0, y: 30 }}
@@ -109,10 +102,7 @@ const Location = () => {
           </motion.div>
         </div>
       </div>
-
-      <div className="section fp-auto-height">
         <LecielFooter />
-      </div>
     </div>
   );
 };

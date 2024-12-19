@@ -1,29 +1,24 @@
 import React from "react";
-import OverviewImage from "../../../../shared/asset/Leciel/overview.jpg";
+import Banner from '../../../../widgets/Leciel/component/Banner';
 import OverviewImage2 from "../../../../shared/asset/Leciel/sub01-1.jpg";
 import BrandImage from "../../../../shared/asset/Leciel/sub01-2-2.png";
 import BrandImage2 from "../../../../shared/asset/Leciel/sub01-2-1.jpg";
 import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
+import Notice from '../../../../widgets/Leciel/component/Notice';
 import "./overview.scss";
 
 const Overview = () => {
-  const topPage = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const notices = [
+    '',
+    '본 홈페이지의 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.',
+    '본 홈페이지에 사용된 CG, 이미지 및 영상은 소비자의 이해를 돕기 위해 제작된 것으로 실제와 차이가 있을 수 있습니다.'
+  ];
 
   return (
-    <div className="container">
+    <div className="overview-container">
       <div className="wrap">
 
-        <div className="banner">
-          <div className="imgBox">
-            <img src={OverviewImage} alt="사업 개요 배너 이미지" />
-            <div className="textBox1">
-              <h2>ABOUT</h2>
-              <h4>사업안내</h4>
-            </div>
-          </div>
-        </div>
+        <Banner title="ABOUT" subtitle="사업안내"/>
 
         <div className="textBox2">
           <p2>사업개요</p2>
@@ -35,6 +30,7 @@ const Overview = () => {
         <div className="contentBox">
           <img src={OverviewImage2} alt="사업 정보 이미지"/>
           <div className="cardBox">
+          <div className="row">
             <div className="card">
               <h4>위치</h4>
               <p>천안시 동남구 영성동 54-3번지 일원</p>
@@ -47,6 +43,8 @@ const Overview = () => {
                 공동주택(아파트), 오피스텔 및 부대 복리시설과 주차장
               </p>
             </div>
+          </div>
+          <div className="row">
             <div className="card">
               <h4>용도</h4>
               <p>공동주택 및 부대·복리시설, 업무시설(오피스텔), 근린생활시설</p>
@@ -61,13 +59,13 @@ const Overview = () => {
               </p>
             </div>
           </div>
+        </div>
 
           <div className="textBox3">
             <p2>브랜드</p2>
             <h4>최고의 라이프를 꿈꾸며, 앞서가는 주거문화 향상에 기여하는 태왕</h4>
             <p>태왕E&C!</p>
           </div>
-
 
           <div className="content_Ani">
             <img src={BrandImage2} alt="브랜드 배경이미지" className="backgroundImage" />
@@ -82,22 +80,12 @@ const Overview = () => {
             </div>
             <img src={BrandImage} alt="브랜드 이미지" className="foregroundImage" />
           </div>
-
-
-
-          <div className="content">
-            <p>※ 본 홈페이지의 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
-            <p>
-              ※ 본 홈페이지에 사용된 CG, 이미지 및 영상은 소비자의 이해를 돕기 위해 제작된
-              것으로 실제와 차이가 있을 수 있습니다.
-            </p>
-          </div>
+          <Notice notices={notices} />
         </div>
       </div>
 
-      <div className="section fp-auto-height">
         <LecielFooter />
-      </div>
+
     </div>
   );
 };

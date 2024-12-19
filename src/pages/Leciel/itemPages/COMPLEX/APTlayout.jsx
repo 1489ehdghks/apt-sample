@@ -1,27 +1,22 @@
 import React from "react";
-import OverviewImage from "../../../../shared/asset/Leciel/overview.jpg";
+import Banner from '../../../../widgets/Leciel/component/Banner';
 import APTlayoutImage from "../../../../shared/asset/Leciel/sub02-4-1.jpg";
 import LecielFooter from "../../../../widgets/Leciel/Footer/LecielFooter";
+import Notice from '../../../../widgets/Leciel/component/Notice';
 import "./APTlayout.scss";
 
 const APTlayout = () => {
-  const topPage = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const notices = [
+    '',
+    '본 홈페이지의 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.',
+    '본 홈페이지에 사용된 CG, 이미지 및 영상은 소비자의 이해를 돕기 위해 제작된 것으로 실제와 차이가 있을 수 있습니다.'
+  ];
 
   return (
-    <div className="container">
+    <div className="layout-container">
       <div className="wrap">
 
-        <div className="banner">
-          <div className="imgBox">
-            <img src={OverviewImage} alt="사업 개요 배너 이미지" />
-            <div className="textBox1">
-              <h2>COMPLEX</h2>
-              <h4>단지안내</h4>
-            </div>
-          </div>
-        </div>
+      <Banner title="COMPLEX" subtitle="단지안내"/>
 
         <div className="textBox2">
           <p2>동호수배치도</p2>
@@ -31,23 +26,12 @@ const APTlayout = () => {
         </div>
 
         <div className="contentBox">
-          <div className="content_Ani">
             <img src={APTlayoutImage} alt="동호수 배치도 이미지"/>
-          </div>
-
-          <div className="content">
-            <p>※ 본 홈페이지의 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
-            <p>
-              ※ 본 홈페이지에 사용된 CG, 이미지 및 영상은 소비자의 이해를 돕기 위해 제작된
-              것으로 실제와 차이가 있을 수 있습니다.
-            </p>
-          </div>
+            <Notice notices={notices} />
         </div>
+        
       </div>
-
-      <div className="section fp-auto-height">
         <LecielFooter />
-      </div>
     </div>
   );
 };
