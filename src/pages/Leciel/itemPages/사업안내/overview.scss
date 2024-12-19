@@ -1,38 +1,7 @@
-.container {
-  overflow: auto; /* 스크롤을 가능하게 함 */
-  height: 100vh; /* 필요 시, 전체 화면 높이를 명시적으로 설정 */
-  background: linear-gradient(160deg, #1a1a1a 0%, #262626 100%); /* 배경을 그라데이션으로 변경 */
-}
-
-  .banner {
-    .imgBox {
-      position: relative;
-  
-      img {
-        width: 100%;
-      }
-  
-      .textBox1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-  
-        h2 {
-          font-size: 48px;
-          color: white;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-  
-        h4 {
-          font-size: 1.5rem;
-          color: white;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
-  }
+.overview-container {
+  overflow: auto;
+  height: 100vh;
+  background: linear-gradient(160deg, #1a1a1a 0%, #262626 100%);
   
   .textBox2, .textBox3 {
     text-align: center;
@@ -58,6 +27,10 @@
   
   .contentBox {
     margin: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   
     img {
       width: 100%;
@@ -66,37 +39,51 @@
   
     .cardBox {
       display: flex;
-      flex-direction: column; /* 카드를 세로로 나열 */
+      flex-direction: column;
       gap: 20px;
-      margin-top: 20px;
-      align-items: center;
+      width: 90%;
   
-      .card {
-        width: 70%; /* 각 카드의 너비 */
-        padding: 20px;
-        text-align: center;
+      .row {
+        display: flex; 
+        justify-content: space-between; 
+        gap: 20px;
   
-        h4 {
-          font-size: 1.2rem;
-          color: white;
-          margin-bottom: 10px;
-          border-bottom: 2px solid #333; /* 선 추가 */
-          padding-bottom: 10px; /* 선과 텍스트 간의 간격을 추가 */
-        }
+        .card {
+          flex: 1;
+          padding: 20px;
+          text-align: center;
+          border-radius: 8px;
+          box-sizing: border-box;
   
-        p {
-          font-size: 1rem;
-          color: rgb(223, 222, 222);
+          h4 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #666666;
+            padding-bottom: 10px;
+          }
+  
+          p {
+            font-size: 1rem;
+            color: rgb(223, 222, 222);
+          }
         }
       }
     }
+
+    @media (max-width: 1024px) {
+      .cardBox {
+        flex-direction: column;
+        gap: 20px;
+      }
   
-    .content {
-      margin-top: 50px;
+      .row {
+        flex-direction: column;
+        gap: 20px;
+      }
   
-      p {
-        font-size: 0.9rem;
-        color: gray;
+      .card {
+        flex: 1 1 100%; 
       }
     }
   }
@@ -157,4 +144,4 @@
       margin-bottom: -30px;
     }
   }
-  
+}

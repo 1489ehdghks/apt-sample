@@ -21,10 +21,8 @@ const Location = () => {
 
   return (
     <div className="location-page">
-      <Banner
-        title="ABOUT"
-        subtitle="사업안내"
-      />
+      
+      <Banner title="ABOUT" subtitle="사업안내" />
 
       <div className="textBox2">
         <p2>입지안내</p2>
@@ -104,9 +102,7 @@ const Location = () => {
           </motion.div>
         </div>
       </div>
-      <div className="Le-footer">
         <LecielFooter />
-      </div>
     </div>
   );
 };

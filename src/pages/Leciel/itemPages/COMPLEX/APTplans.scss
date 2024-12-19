@@ -1,99 +1,23 @@
-.container {
+.plans-container {
   overflow: auto;
   height: 100vh;
   background: linear-gradient(160deg, #1a1a1a 0%, #262626 100%);
-}
 
-.banner {
-  margin-bottom: 200px;
-  
-  .imgBox {
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-
-    .textBox1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-
-      h2 {
-        font-size: 48px;
-        color: white;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      }
-
-      h4 {
-        font-size: 1.5rem;
-        color: white;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
-}
-
-.textBox2 {
-  text-align: center;
-  margin-bottom: 100px;
-
-  p {
-    font-size: 2rem;
-    color: white;
-  }
-}
-
-.contentBox {
-  .btnBox {
-    display: flex;
-    gap: 20px;
-    margin: 20px 0;
-
-    div {
-      width: 100%;
-      background-color: #e9eaec;
-      text-align: center;
-      border-radius: 6px;
-      padding: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &.on {
-        background-color: #012b42;
-        color: white;
-      }
-    }
-  }
-
-  .content_Div {
-    display: none;
-
-    &.on {
-      display: block;
-    }
-
-    .imgBox {
-      margin-top: 20px;
-
-      img {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-    }
-  }
-
-  .textBox {
-    padding: 25px;
-    margin-top: 50px;
+  .textBox2 {
+    text-align: center;
+    margin-bottom: 100px;
 
     p {
-      font-size: 0.9rem;
-      color: #828080;
-      line-height: 1.5;
+      font-size: 2rem;
+      color: white;
     }
+  }
+
+  .notice-box{
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
